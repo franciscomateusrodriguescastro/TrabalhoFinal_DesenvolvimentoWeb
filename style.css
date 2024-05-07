@@ -1,15 +1,5 @@
-/* Estilos da página de introdução */
-
-
-/* Fim dos estilos da página de introdução */
-
-
-/* Estilos da página de cadastro */
-body {
-    background-color: #14477a;
-}
-
-.form-container {
+/* Estilos personalizados Cadastro*/
+.body-cadastro .form-container-cadastro {
     max-width: 500px;
     margin: auto;
     margin-top: 50px;
@@ -17,20 +7,74 @@ body {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center; 
+    border: 1px solid #ccc;
 }
 
-.form-container h1 {
-    font-size: 24px;
-    margin-bottom: 30px;
-    text-align: center;
+.body-cadastro .form-container-cadastro input,
+.body-cadastro .form-container-cadastro button {
+    width: 100%; 
+    max-width: 300px; 
+    margin-bottom: 10px;
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+/* Fim dos estilos personalizados Cadastro*/
+
+/* Estilos personalizados Login*/
+.body-login .form-container-login {
+    max-width: 400px;
+    margin: auto;
+    margin-top: 130px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px; 
+    box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center; 
+    border: 1px solid #ccc;
 }
 
-.form-control {
+.body-login .form-container-login input,
+.body-login .form-container-login button {
+    width: 100%; 
+    max-width: 300px; 
+    margin-bottom: 10px;
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Fim dos estilos personalizados Login*/
+
+
+/* Estilos da página de Admin*/
+body {
+    background-color: #f8f9fa;
+}
+
+h1 {
     margin-bottom: 20px;
 }
 
-.btn-primary {
+table {
     width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
-/* Fim dos estilos da página de cadastro */
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+@media (max-width: 767px) {
+    table {
+        overflow-x: auto;
+    }
+}
+/* Fim dos estilos personalizados Admin*/
