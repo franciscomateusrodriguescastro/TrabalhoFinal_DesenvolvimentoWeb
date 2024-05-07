@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,29 +8,51 @@
     <style>
         body {
             background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
         }
         .form-container {
-            max-width: 400px;
+            max-width: 500px;
             margin: auto;
             margin-top: 50px;
-            padding: 20px;
+            padding: 30px;
             background-color: #ffffff;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .form-container h1 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .form-control {
+            margin-bottom: 20px;
+        }
+        .btn-primary {
+            width: 100%;
         }
     </style>
 </head>
 <body>
     <div class="container form-container">
-        <h1 class="text-center">Cadastro de Usuário</h1>
+        <h1>Cadastro de Usuário</h1>
         <form id="registerForm">
             <div class="mb-3">
                 <label for="username" class="form-label">Usuário:</label>
                 <input type="text" class="form-control" id="username" name="username" required>
             </div>
             <div class="mb-3">
+                <label for="email" class="form-label">E-mail:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="birthdate" class="form-label">Data de Nascimento:</label>
+                <input type="date" class="form-control" id="birthdate" name="birthdate" required>
+            </div>
+            <div class="mb-3">
                 <label for="password" class="form-label">Senha:</label>
                 <input type="password" class="form-control" id="password" name="password" required>
             </div>
+            <div class="mb-3"> <label for="confirmPassword" class="form-label">Confirmar Senha:</label> <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required> </div>
             <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>
     </div>
