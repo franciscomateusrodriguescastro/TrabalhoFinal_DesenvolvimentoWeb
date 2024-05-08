@@ -1,3 +1,21 @@
+/* Estilos personalizados Index*/
+body {
+    background-color: #f8f9fa;
+}
+.header {
+    background-color: #ffffff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.content {
+    margin-top: 50px;
+}
+.logo img {
+    width: 80px; /* ou o tamanho desejado */
+    height: auto;
+    border-radius: 60px;
+}
+/* Fim dos estilos personalizados Index*/
+
 /* Estilos personalizados Cadastro*/
 .body-cadastro .form-container-cadastro {
     max-width: 500px;
@@ -48,10 +66,6 @@
 
 
 /* Estilos da página de Admin*/
-body {
-    background-color: #f8f9fa;
-}
-
 h1 {
     margin-bottom: 20px;
 }
