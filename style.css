@@ -25,8 +25,6 @@ body {
     transform: scale(1.1);
 }
 
-
-/* Estilos para a imagem no desenvolvimento */
 #desenvolvimento img {
     max-width: 43%;
     height: auto;
@@ -47,14 +45,29 @@ body {
     font-size: 18px;
 }
 
-#ponto-chave p {
-    margin-top: 20px;
-    text-align: left;
-    font-size: 18px;
+#pontos-chave h2 {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
+#pontos-chave p {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    color: black
+}
+
+ul.text-start li {
+    font-size: 20px;
+}
+
+/* Estilos para os icones no desenvolvimento */
+
 .html-icon {
-    width: 80px;
+    width: 85px;
     height: auto;
     margin-bottom: 12px;
     margin-right: 10px;
@@ -66,7 +79,7 @@ body {
 }
 
 .css-icon {
-    width: 140px;
+    width: 65px;
     height: auto;
     margin-bottom: 12px;
     margin-right: 10px;
@@ -92,7 +105,7 @@ body {
 }
 
 .mongo-icon {
-    width: 100px;
+    width: 95px;
     height: auto;
     margin-bottom: 12px;
     margin-right: 10px;
@@ -105,6 +118,56 @@ body {
     transform: scale(1.1);
 }
 
+.react-icon {
+    width: 75px; 
+    height: auto;
+    margin-bottom: 12px;
+    margin-right: 10px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.react-icon:hover {
+    transform: scale(1.1);
+}
+
+.vue-icon {
+    width: 5px; 
+    height: auto;
+    margin-bottom: 12px;
+    margin-right: 10px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.vue-icon:hover {
+    transform: scale(1.1);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-flow: row; /* Garante que as células sejam preenchidas em linhas */
+}
+
+.grid-item img {
+    width: 100%; /* Garante que as imagens ocupem 100% da largura da célula */
+}
+
+#ponto-chave .grid-container {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 767px) {
+    .grid-item img {
+        width: 40%;
+    }
+}
+
+/* FIm dos estilos para icones no desenvolvimento */
 
 /* Fim dos estilos personalizados Index */
 
