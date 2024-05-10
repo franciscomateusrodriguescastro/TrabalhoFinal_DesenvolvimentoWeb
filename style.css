@@ -14,8 +14,8 @@ body {
 }
 
 .logo img {
-    width: 190px;
-    border-radius: 60px;
+    width: 75px;
+    border-radius: 10px;
     height: auto;
     margin-right: 3px;
     transition: transform 0.3s ease;
