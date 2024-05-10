@@ -1,6 +1,6 @@
-/* Estilos personalizados Index*/
+/* Estilos personalizados Index */
 body {
-    background-color: #f8f9fa;
+    background-color: #ffffff;
 }
 
 .header {
@@ -14,15 +14,164 @@ body {
 }
 
 .logo img {
-    width: 77px;
+    width: 190px;
     border-radius: 60px;
     height: auto;
-    margin-right: 03px;
+    margin-right: 3px;
+    transition: transform 0.3s ease;
 }
 
-/* Fim dos estilos personalizados Index*/
+.logo img:hover {
+    transform: scale(1.1);
+}
 
-/* Estilos personalizados Cadastro*/
+#desenvolvimento img {
+    max-width: 43%;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 138px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+#desenvolvimento img:hover {
+    transform: scale(1.1);
+}
+
+#desenvolvimento p {
+    margin-top: 20px;
+    text-align: left;
+    font-size: 18px;
+}
+
+#pontos-chave h2 {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#pontos-chave p {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    color: black
+}
+
+ul.text-start li {
+    font-size: 20px;
+}
+
+/* Estilos para os icones no desenvolvimento */
+
+.html-icon {
+    width: 85px;
+    height: auto;
+    margin-bottom: 12px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.html-icon:hover {
+    transform: scale(1.1);
+}
+
+.css-icon {
+    width: 65px;
+    height: auto;
+    margin-bottom: 12px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.css-icon:hover {
+    transform: scale(1.1);
+}
+
+.js-icon {
+    width: 75px; 
+    height: auto;
+    margin-bottom: 12px;
+    margin-right: 10px;
+    border-radius: 17px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.js-icon:hover {
+    transform: scale(1.1);
+}
+
+.mongo-icon {
+    width: 95px;
+    height: auto;
+    margin-bottom: 12px;
+    margin-right: 10px;
+    border-radius: 24px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.mongo-icon:hover {
+    transform: scale(1.1);
+}
+
+.react-icon {
+    width: 75px; 
+    height: auto;
+    margin-bottom: 12px;
+    margin-right: 10px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.react-icon:hover {
+    transform: scale(1.1);
+}
+
+.vue-icon {
+    width: 5px; 
+    height: auto;
+    margin-bottom: 12px;
+    margin-right: 10px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.vue-icon:hover {
+    transform: scale(1.1);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-flow: row; /* Garante que as células sejam preenchidas em linhas */
+}
+
+.grid-item img {
+    width: 100%; /* Garante que as imagens ocupem 100% da largura da célula */
+}
+
+#ponto-chave .grid-container {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 767px) {
+    .grid-item img {
+        width: 40%;
+    }
+}
+
+/* FIm dos estilos para icones no desenvolvimento */
+
+/* Fim dos estilos personalizados Index */
+
+/* Estilos personalizados Cadastro */
 .body-cadastro .form-container-cadastro {
     max-width: 500px;
     margin: auto;
@@ -31,47 +180,46 @@ body {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-    text-align: center; 
+    text-align: center;
     border: 1px solid #ccc;
 }
 
 .body-cadastro .form-container-cadastro input,
 .body-cadastro .form-container-cadastro button {
-    width: 100%; 
-    max-width: 300px; 
+    width: 100%;
+    max-width: 300px;
     margin-bottom: 10px;
-    display: block; 
-    margin-left: auto; 
-    margin-right: auto; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
-/* Fim dos estilos personalizados Cadastro*/
+/* Fim dos estilos personalizados Cadastro */
 
-/* Estilos personalizados Login*/
+/* Estilos personalizados Login */
 .body-login .form-container-login {
     max-width: 400px;
     margin: auto;
     margin-top: 130px;
     padding: 20px;
     background-color: #ffffff;
-    border-radius: 10px; 
+    border-radius: 10px;
     box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center; 
+    text-align: center;
     border: 1px solid #ccc;
 }
 
 .body-login .form-container-login input,
 .body-login .form-container-login button {
-    width: 100%; 
-    max-width: 300px; 
+    width: 100%;
+    max-width: 300px;
     margin-bottom: 10px;
-    display: block; 
+    display: block;
     margin-left: auto;
     margin-right: auto;
 }
-/* Fim dos estilos personalizados Login*/
+/* Fim dos estilos personalizados Login */
 
-
-/* Estilos da página de Admin*/
+/* Estilos da página de Admin */
 h1 {
     margin-bottom: 20px;
 }
@@ -96,5 +244,12 @@ th {
     table {
         overflow-x: auto;
     }
+
+    .html-icon,
+    .css-icon,
+    .js-icon,
+    .mongo-icon {
+        width: 40%; /* Redimensionando os ícones para telas menores */
+    }
 }
-/* Fim dos estilos personalizados Admin*/
+/* Fim dos estilos personalizados Admin */
