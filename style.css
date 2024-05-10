@@ -1,248 +1,167 @@
-/* Estilos personalizados Index */
-body {
-    background-color: #ffffff;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-.header {
-    background-color: #ffffff;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    color: black;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
 }
-
-.content {
-    margin-top: 50px;
+:root{
+    --red:#d63a25;
+    --white:#fff;
+    --dark:#1e1c2a;
+    --blue: #20afd8;
 }
-
-.logo img {
-    width: 75px;
-    border-radius: 10px;
-    height: auto;
-    margin-right: 3px;
-    transition: transform 0.3s ease;
+body{
+    color: var(--dark);
+    background: var(--white);
 }
-
-.logo img:hover {
-    transform: scale(1.1);
-}
-
-#desenvolvimento img {
-    max-width: 100%;
-    height: auto;
-}
-#desenvolvimento img:hover {
-    transform: scale(1.1);
-}
-
-#desenvolvimento p {
-    margin-top: 20px;
-    text-align: left;
-    font-size: 18px;
-}
-
-#pontos-chave h2 {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-#pontos-chave p {
-    text-align: center;
-    font-size: 18px;
-    margin-top: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-    color: black
-}
-
-ul.text-start li {
-    font-size: 20px;
-}
-
-/* Estilos para os icones no desenvolvimento */
-
-.html-icon {
-    width: 85px;
-    height: auto;
-    margin-bottom: 12px;
-    margin-right: 10px;
-    transition: transform 0.3s ease;
-}
-
-.html-icon:hover {
-    transform: scale(1.1);
-}
-
-.css-icon {
-    width: 65px;
-    height: auto;
-    margin-bottom: 12px;
-    margin-right: 10px;
-    transition: transform 0.3s ease;
-}
-
-.css-icon:hover {
-    transform: scale(1.1);
-}
-
-.js-icon {
-    width: 75px; 
-    height: auto;
-    margin-bottom: 12px;
-    margin-right: 10px;
-    border-radius: 17px;
-    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.js-icon:hover {
-    transform: scale(1.1);
-}
-
-.mongo-icon {
-    width: 95px;
-    height: auto;
-    margin-bottom: 12px;
-    margin-right: 10px;
-    border-radius: 24px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.mongo-icon:hover {
-    transform: scale(1.1);
-}
-
-.react-icon {
-    width: 75px; 
-    height: auto;
-    margin-bottom: 12px;
-    margin-right: 10px;
-    border-radius: 12px;
-    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.react-icon:hover {
-    transform: scale(1.1);
-}
-
-.vue-icon {
-    width: 5px; 
-    height: auto;
-    margin-bottom: 12px;
-    margin-right: 10px;
-    border-radius: 12px;
-    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.vue-icon:hover {
-    transform: scale(1.1);
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Alteração aqui para tornar o grid mais responsivo */
-    gap: 10px;
-    grid-auto-flow: row;
-}
-
-.grid-item img {
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+    box-shadow: 0 0.1rem 0.5rem #ccc;
     width: 100%;
+    background: var(--white);
+    transition: all 0.5s;
+    position: fixed;
 }
-#ponto-chave .grid-container {
-    margin-bottom: 20px;
+.navigation .logo{
+    color: var(--red);
+    font-size: 1.7rem;
+    font-weight: 900;
 }
-
-@media (max-width: 767px) {
-    .grid-item img {
-        width: 40%;
-    }
+.logo span{
+    color: var(--dark);
 }
-
-/* FIm dos estilos para icones no desenvolvimento */
-
-/* Fim dos estilos personalizados Index */
-
-/* Estilos personalizados Cadastro */
-.body-cadastro .form-container-cadastro {
-    max-width: 500px;
-    margin: auto;
-    margin-top: 50px;
-    padding: 30px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    border: 1px solid #ccc;
+.navigation ul{
+    display: flex;
+    align-items: center;
+    gap: 5rem;
 }
-
-.body-cadastro .form-container-cadastro input,
-.body-cadastro .form-container-cadastro button {
-    width: 100%;
-    max-width: 300px;
-    margin-bottom: 10px;
+.navigation ul li a{
+    color: var(--dark);
+    font-size: 17px;
+    font-weight: 500;
+    transition: all 0.5s;
+}
+.navigation ul li a:hover{
+    color: var(--red);
+}
+.navigation i{
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+.menu{
+    cursor: pointer;
+    display: none;
+}
+.menu .bar{
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    width: 28px;
+    height: 3px;
+    border-radius: 3px;
+    background: var(--dark);
+    margin: 5px auto;
+    transition: all 0.3s;
 }
-/* Fim dos estilos personalizados Cadastro */
-
-/* Estilos personalizados Login */
-.body-login .form-container-login {
-    max-width: 400px;
-    margin: auto;
-    margin-top: 130px;
-    padding: 20px;
-    background-color: #ffffff;
+.menu .bar:nth-child(1),
+.menu .bar:nth-child(3){
+    background: var(--red);
+}
+.home{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10%;
+}
+.home-text{
+    max-width: 37rem;
+}
+.home-text .text-h4{
+    font-size: 1.5rem;
+    color: var(--red);
+    margin-bottom: 1rem;
+}
+.home-text .text-h1{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    line-height: 4rem;
+}
+.home-text p{
+    margin-bottom: 4rem;
+}
+.home-btn{
+    padding: 15px 45px;
+    background: var(--red);
+    color: var(--white);
     border-radius: 10px;
-    box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    border: 1px solid #ccc;
+    font-weight: 700;
+    transition: all 0.5s;
 }
-
-.body-login .form-container-login input,
-.body-login .form-container-login button {
+.home-btn:hover{
+    background: #fc4c35;
+}
+.home-img img{
     width: 100%;
-    max-width: 300px;
-    margin-bottom: 10px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
-/* Fim dos estilos personalizados Login */
-
-/* Estilos da página de Admin */
-h1 {
-    margin-bottom: 20px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-th, td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-th {
-    background-color: #f2f2f2;
-}
-
-@media (max-width: 767px) {
-    table {
-        overflow-x: auto;
+@media (max-width:785px) {
+    .navigation{
+        padding: 18px 20px;
     }
-
-    .html-icon,
-    .css-icon,
-    .js-icon,
-    .mongo-icon {
-        width: 40%; /* Redimensionando os ícones para telas menores */
+    .menu{
+        display: block;
+    }
+    .menu.ativo .bar:nth-child(1){
+        transform:  translateY(8px) rotate(45deg);
+    }
+    .menu.ativo .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu.ativo .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-menu{
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        background: var(--white);
+        gap: -10px;
+        transition: 0.3s;
+    }
+    .nav-menu.ativo{
+        right: 0;
+    }
+    .nav-item{
+        margin: 16px 0;
+    }
+    /*main*/
+    .home{
+        padding: 100px 2%;
+        flex-direction: column;
+        text-align: center;
+        overflow: hidden;
+        gap: 5rem;
+    }
+    .home .text-h4{
+        font-size: 15px;
+    }
+    .home .text-h1{
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+    .home p{
+        font-size: 15px;
+    }
+    .home-img{
+        width: 125%;
     }
 }
-/* Fim dos estilos personalizados Admin */
