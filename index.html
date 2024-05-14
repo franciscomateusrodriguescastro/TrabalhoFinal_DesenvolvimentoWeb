@@ -5,19 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trabalho Dev.Web</title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-    <link href="style.css" rel="stylesheet"/>
-
+    <link href="styles.css" rel="stylesheet"/>
 </head>
 <body>
     <header>
         <nav class="navigation">
-            <img src="img/DW_logo.png" height="50px">
-            <a href="index.html" class="logo">Desenvolvimento<span>We<span>b</span></a>
+            <a href="#" class="logo">S<span>tudi</span>o D<span>e</span>v</a>
             <ul class="nav-menu">
-                <li class="nav-item"><a href="#">Home</a></li>
-                <li class="nav-item"><a href="#">Sobre</a></li>
-                <li class="nav-item"><a href="#">Menu</a></li>
-                <li class="nav-item"><a href="#">Área do cliente</a></li>
+                <li class="nav-item"><a href="#home">Home</a></li>
+                <li class="nav-item"><a href="#desenvolvimento">Sobre</a></li>
+                <li class="nav-item"><a href="#menu">Menu</a></li>
+                <li class="nav-item"><a href="#area-do-cliente">Área do cliente</a></li>
                 <i class='bx bx-search'></i>
             </ul>
             <div class="menu">
@@ -28,20 +26,63 @@
         </nav>
     </header>
     <main>
-        <section class="home">
+        <section id="home" class="home">
             <div class="home-text">
-                <h4 class="text-h4">Bem vindo ao Desenvolvimento Web</h4>
-                <h1 class="text-h1">Sabia mais sobre Desenvolvimento web e sua importancia na construção do seu site</h1>
-                <p>Venha fazer parte dessa equipe.</p>
-                <a href="login.html" class="home-btn">Faça seu login</a>
-                <a href="cadastro.html" class="home-btn">faça o seu cadastro</a>
-
+                <h4 class="text-h4" style="padding-top: 5vh;">Bem vindo ao Studio Dev</h4>
+                <h1 class="text-h1">Embarque no desafio da programação e abra caminho para o sucesso.</h1>
+                <p>Abra as portas para o conhecimento digital e escreva o seu próprio destino.</p>
+                <a href="#" class="home-btn">Torne-se um programador</a>
             </div>
             <div class="home-img">
-                <img src="img/Logotipo Nome Monograma Minimalista Preto e Branco.png" alt="Hamburger">
+                <img src="img/programaçao.png" alt="programação">
             </div>
         </section>
+        <section id="sobre" class="home-info" style="padding-top: 10vh;">
+            <h2 id="desenvolvimento">Desenvolvimento para Plataforma Web</h2>
+            <p>O desenvolvimento para plataformas web é uma área fundamental da tecnologia da informação, 
+                        focada na criação de aplicativos e sistemas acessados através de navegadores web. 
+                        Esses aplicativos podem variar desde sites estáticos até complexas aplicações web interativas. 
+                        O desenvolvimento web abrange tanto o lado do cliente (front-end), responsável pela interface com o usuário, 
+                        quanto o lado do servidor (back-end), 
+                        que gerencia a lógica de negócios, processa dados e interage com bancos de dados e outros sistemas.</p>
+        </section>
+        
+        <section id="menu" class="home-info">
+            <h2>Exemplo de Menu</h2>
+            <p>Esta é uma seção de exemplo para demonstrar o link "Menu".</p>
+        </section>
+        
     </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Selecione todos os links da barra de navegação
+            const links = document.querySelectorAll('.nav-menu a');
+
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href').substring(1);
+                    const target = document.getElementById(targetId);
+
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                });
+            });
+
+            const logo = document.querySelector('.logo');
+            logo.addEventListener('click', function(e) {
+                e.preventDefault(); 
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
