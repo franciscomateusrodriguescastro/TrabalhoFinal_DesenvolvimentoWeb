@@ -4,54 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-        }
-        .container {
-            max-width: 400px;
-            margin: 50px auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .form-control {
-            margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid #ced4da;
-            border-radius: 5px;
-        }
-        .btn-primary {
-            background-color: #ff7f50;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            color: #fff;
-            cursor: pointer;
-        }
-        .btn-primary:hover {
-            background-color: #e66030;
-        }
-        .btn-block {
-            display: block;
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
-        <h1 style="text-align: center; color: #ff7f50;">Login</h1>
+        <h1 style="text-align: center; color: #007bff;">Login</h1>
         <form id="loginForm">
             <input type="text" class="form-control" id="username" name="username" placeholder="Usuário" required>
             <input type="password" class="form-control" id="password" name="password" placeholder="Senha" required>
-            <button type="submit" class="btn btn-primary btn-block btn-block">Entrar</button>
+            <button type="submit" class="btn btn-primary btn-block">Entrar</button>
         </form>
     </div>
-    
-    <!-- Add your scripts here -->
-    
+
+    <script src="scripts.js"></script>
 </body>
 </html>

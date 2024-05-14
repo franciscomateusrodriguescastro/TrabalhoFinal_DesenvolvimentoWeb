@@ -255,3 +255,92 @@ body {
 .home-info {
     padding-top: 10vh;
 }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: blue; /* Azul */
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Azul mais escuro */
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 700px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    width: calc(100% - 22px); /* Ajuste para o tamanho das bordas */
+    box-sizing: border-box; /* Inclui padding e bordas na largura total */
+}
+
+.btn-primary {
+    background-color: blue; /* Azul */
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    width: calc(100% - 22px); /* Ajuste para o tamanho das bordas */
+    box-sizing: border-box; /* Inclui padding e bordas na largura total */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Azul mais escuro */
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.form-label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+
