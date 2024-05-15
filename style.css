@@ -11,7 +11,6 @@
 }
 
 :root {
-    --red: #d63a25;
     --white: #fff;
     --dark: #1e1c2a;
     --blue: #0043b3;
@@ -342,4 +341,27 @@ body {
 
 .home-info {
     padding-top: 10vh;
+}
+
+/* Adicionado para lista de ferramentas */
+.tools-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+}
+
+.tools-list li {
+    list-style-type: none;
+    padding: 5px 10px;
+    background: var(--blue);
+    color: var(--white);
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    cursor: default;
+}
+
+.tools-list li:hover {
+    background: #120964;
+    transform: scale(1.05);
 }
