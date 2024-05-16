@@ -370,22 +370,22 @@ body {
 }
 .container {
     max-width: 400px;
-    margin: 50px auto;
+    margin: 250px auto;
     padding: 20px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 15px;
     background-color: #f9f9f9;
 }
 h1 {
     text-align: center;
-    color: #007bff;
+    color: #0043b3;
 }
 .form-control {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 15px;
     box-sizing: border-box;
 }
 .btn-primary {
@@ -393,8 +393,8 @@ h1 {
     width: 100%;
     padding: 10px;
     border: none;
-    border-radius: 5px;
-    background-color: #007bff;
+    border-radius: 15px;
+    background-color: #0043b3;
     color: #fff;
     cursor: pointer;
 }
