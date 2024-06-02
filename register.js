@@ -1,17 +1,26 @@
-document.getElementById('registerForm').addEventListener('submit', async function(event) {
-    event.preventDefault();
+document.getElementById('registerForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
 
     const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const birthdate = document.getElementById('birthdate').value;
     const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+
+    if (password !== confirmPassword) {
+        alert('As senhas não coincidem');
+        return;
+    }
 
     try {
-        const response = await axios.post('http://exemplo.com/api/register', { username, password });
-        console.log(response.data);
-        alert('Usuário cadastrado com sucesso!');
-        // Redirecionar para a página de login após o cadastro
-        window.location.href = 'login.html';
+        const response = await axios.post('http://localhost:3000/register', {
+            username,
+            email,
+            birthdate,
+            password
+        });
+        alert(response.data);
     } catch (error) {
-        console.error('Erro ao cadastrar usuário:', error);
-        alert('Erro ao cadastrar usuário. Tente novamente mais tarde.');
+        alert('Erro ao cadastrar usuário: ' + error.message);
     }
 });

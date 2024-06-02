@@ -1,7 +1,7 @@
 // Função para carregar os usuários cadastrados na tabela
 async function loadUsers() {
     try {
-        const response = await axios.get('http://exemplo.com/api/users');
+        const response = await axios.get('http://localhost:3000/register');
         const userList = document.getElementById('userList');
 
         userList.innerHTML = ''; // Limpa a tabela antes de adicionar os usuários
