@@ -15,7 +15,13 @@
                 <li class="nav-item"><a href="#home">Home</a></li>
                 <li class="nav-item"><a href="#desenvolvimento">Sobre</a></li>
                 <li class="nav-item"><a href="#menu">Menu</a></li>
-                <li class="nav-item"><a href="#area-do-cliente">Área do cliente</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#area-do-cliente">Área do cliente <i class='bx bx-chevron-down'></i></a>
+                    <div class="dropdown-content">
+                        <a id="login-link" href="login.html">Login</a>
+                        <a id="cadastro-link" href="cadastro.html">Cadastro</a>
+                    </div>
+                </li>
                 <i class='bx bx-search'></i>
             </ul>
             <div class="menu">
@@ -96,6 +102,46 @@
                     top: 0,
                     behavior: 'smooth'
                 });
+            });
+
+            // Script para mostrar/ocultar o dropdown
+            const dropdown = document.querySelector('.nav-item.dropdown');
+            const dropdownContent = dropdown.querySelector('.dropdown-content');
+
+            dropdown.addEventListener('click', function(e) {
+                e.preventDefault();
+                dropdownContent.classList.toggle('show');
+            });
+
+            // Fecha o dropdown ao clicar fora dele
+            window.addEventListener('click', function(e) {
+                if (!dropdown.contains(e.target)) {
+                    dropdownContent.classList.remove('show');
+                }
+            });
+
+            // Adiciona feedback visual ao clicar nos links do dropdown
+            const dropdownLinks = dropdownContent.querySelectorAll('a');
+
+            dropdownLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    dropdownLinks.forEach(l => l.classList.remove('clicked'));
+                    this.classList.add('clicked');
+                });
+            });
+
+            // Redirecionamento para os formulários de login e cadastro
+            const loginLink = document.getElementById('login-link');
+            const cadastroLink = document.getElementById('cadastro-link');
+
+            loginLink.addEventListener('click', function(event) {
+                event.preventDefault(); // Impede o comportamento padrão do link
+                window.location.href = "login.html"; // Redireciona para a página de login
+            });
+
+            cadastroLink.addEventListener('click', function(event) {
+                event.preventDefault(); // Impede o comportamento padrão do link
+                window.location.href = "cadastro.html"; // Redireciona para a página de cadastro
             });
         });
     </script>
