@@ -19,8 +19,8 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
             birthdate,
             password
         });
-        alert(response.data);
+        alert('Usuário cadastrado com sucesso!');
     } catch (error) {
-        alert('Erro ao cadastrar usuário: ' + error.message);
+        alert('Erro ao cadastrar usuário: ' + error.response.data.message);
     }
 });
