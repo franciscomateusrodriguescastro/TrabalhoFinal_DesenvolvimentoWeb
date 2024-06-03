@@ -1,26 +1,19 @@
-document.getElementById('registerForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const username = document.getElementById('username').value;
-    const email = document.getElementById('email').value;
-    const birthdate = document.getElementById('birthdate').value;
-    const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
-
-    if (password !== confirmPassword) {
-        alert('As senhas não coincidem');
-        return;
-    }
-
+document.addEventListener('DOMContentLoaded', async () => {
     try {
-        const response = await axios.post('http://localhost:3000/register', {
-            username,
-            email,
-            birthdate,
-            password
+        const response = await axios.get('http://localhost:3000/users');
+        const users = response.data;
+
+        const userTable = document.getElementById('userTable');
+        users.forEach(user => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${user.username}</td>
+                <td>${user.email}</td>
+                <td>${new Date(user.birthdate).toLocaleDateString('pt-BR')}</td>
+            `;
+            userTable.appendChild(row);
         });
-        alert('Usuário cadastrado com sucesso!');
     } catch (error) {
-        alert('Erro ao cadastrar usuário: ' + error.response.data.message);
+        console.error('Erro ao buscar usuários:', error);
     }
 });
