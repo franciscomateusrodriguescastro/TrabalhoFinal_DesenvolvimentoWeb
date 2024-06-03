@@ -453,3 +453,13 @@ h1 {
 body, html {
     justify-content: center;
 }
+
+footer {
+    background-color: #0043b3;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
