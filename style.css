@@ -376,6 +376,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 15px;
     background-color: #f9f9f9;
+    
 }
 h1 {
     text-align: center;
@@ -448,4 +449,7 @@ h1 {
 .clicked {
     background-color: #ddd;
     color: #333;
+}
+body, html {
+    justify-content: center;
 }
