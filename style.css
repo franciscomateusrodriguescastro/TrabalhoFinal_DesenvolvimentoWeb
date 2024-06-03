@@ -449,22 +449,3 @@ h1 {
     background-color: #ddd;
     color: #333;
 }
-body, html {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f8f9fa;
-}
-.container {
-    max-width: 400px;
-    width: 100%;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-.btn-block {
-    width: 100%;
-}
