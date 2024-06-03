@@ -75,9 +75,14 @@
         </section>
         
     </main>
+
+    <footer class="footer mt-4">
+        <p> © Trabalho Desenvolvimento Web - Unifor 2024. Todos os direitos reservados.</p>
+    </footer>
+    
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Selecione todos os links da barra de navegação
+            
             const links = document.querySelectorAll('.nav-menu a');
 
             links.forEach(link => {
@@ -103,8 +108,7 @@
                     behavior: 'smooth'
                 });
             });
-
-            // Script para mostrar/ocultar o dropdown
+            
             const dropdown = document.querySelector('.nav-item.dropdown');
             const dropdownContent = dropdown.querySelector('.dropdown-content');
 
@@ -112,15 +116,13 @@
                 e.preventDefault();
                 dropdownContent.classList.toggle('show');
             });
-
-            // Fecha o dropdown ao clicar fora dele
+            
             window.addEventListener('click', function(e) {
                 if (!dropdown.contains(e.target)) {
                     dropdownContent.classList.remove('show');
                 }
             });
 
-            // Adiciona feedback visual ao clicar nos links do dropdown
             const dropdownLinks = dropdownContent.querySelectorAll('a');
 
             dropdownLinks.forEach(link => {
@@ -130,18 +132,17 @@
                 });
             });
 
-            // Redirecionamento para os formulários de login e cadastro
             const loginLink = document.getElementById('login-link');
             const cadastroLink = document.getElementById('cadastro-link');
 
             loginLink.addEventListener('click', function(event) {
-                event.preventDefault(); // Impede o comportamento padrão do link
-                window.location.href = "login.html"; // Redireciona para a página de login
+                event.preventDefault();
+                window.location.href = "login.html";
             });
 
             cadastroLink.addEventListener('click', function(event) {
-                event.preventDefault(); // Impede o comportamento padrão do link
-                window.location.href = "cadastro.html"; // Redireciona para a página de cadastro
+                event.preventDefault(); 
+                window.location.href = "cadastro.html";
             });
         });
     </script>
