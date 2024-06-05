@@ -1,7 +1,7 @@
 // Função para carregar os usuários cadastrados na tabela
 async function loadUsers() {
     try {
-        const response = await axios.get('http://localhost:3000/register');
+        const response = await axios.get('mongodb+srv://matesrodrigues:dbmateus99@cluster0.1mwlztn.mongodb.net/');
         displayUsers(response.data);
     } catch (error) {
         console.error('Erro ao carregar usuários:', error);
@@ -56,7 +56,7 @@ async function saveUser(event) {
     const email = document.getElementById('email').value;
 
     try {
-        const response = await axios.post('http://localhost:3000/register', {
+        const response = await axios.post('mongodb+srv://matesrodrigues:dbmateus99@cluster0.1mwlztn.mongodb.net/', {
             username: username,
             email: email
         });

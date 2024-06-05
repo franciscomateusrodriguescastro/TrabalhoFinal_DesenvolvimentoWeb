@@ -7,7 +7,7 @@ const app = express();
 const port = 3000;
 
 // Conexão com o MongoDB
-mongoose.connect('mongodb://localhost:27017/usersdb', {
+mongoose.connect('mongodb+srv://matesrodrigues:dbmateus99@cluster0.1mwlztn.mongodb.net/', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -57,5 +57,5 @@ app.delete('/api/users/:id', async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Servidor rodando em http://localhost:${port}`);
+    console.log(`Servidor rodando em mongodb+srv://matesrodrigues:dbmateus99@cluster0.1mwlztn.mongodb.net/`);
 });
