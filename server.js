@@ -1,17 +1,18 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
+const routes = require('./routes');
 const cors = require('cors');
 
 const app = express();
 const port = 3000;
 
 // Conexão com o MongoDB
-mongoose.connect('mongodb+srv://matesrodrigues:dbmateus99@cluster0.1mwlztn.mongodb.net/', {
+mongoose.connect('mongodb+srv://mateus:dbmateus99@cluster0.1mwlztn.mongodb.net/', { 
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
 });
 
+const db = mongoose.connection;
 const userSchema = new mongoose.Schema({
     username: String,
     email: String,
@@ -21,7 +22,7 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model('User', userSchema);
 
-app.use(cors());
+app.use(cors(express.static(__dirname)));
 app.use(bodyParser.json());
 
 // Rota para registrar um novo usuário
@@ -57,5 +58,5 @@ app.delete('/api/users/:id', async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Servidor rodando em mongodb+srv://matesrodrigues:dbmateus99@cluster0.1mwlztn.mongodb.net/`);
+    console.log("mongodb+srv://mateus:dbmateus99@cluster0.1mwlztn.mongodb.net/");
 });
