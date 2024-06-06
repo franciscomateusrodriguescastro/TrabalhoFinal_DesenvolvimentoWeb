@@ -1,18 +1,23 @@
-document.getElementById('loginForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
+document.addEventListener('DOMContentLoaded', function() {
+    const loginForm = document.getElementById('loginForm');
 
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+    loginForm.addEventListener('submit', function(event) {
+        event.preventDefault();
 
-    try {
-        const response = await axios.post('/api/users/login', { email, password });
-        if (response.data.success) {
-            window.location.href = '/admin.html';
-        } else {
-            alert('Login falhou. Verifique suas credenciais.');
-        }
-    } catch (error) {
-        console.error('Erro ao realizar login:', error);
-        alert('Erro ao realizar login. Tente novamente.');
-    }
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        axios.post('/login', { username, password })
+            .then(response => {
+                console.log(response.data);
+                if (response.data.success) {
+                    window.location.href = 'admin.html';
+                } else {
+                    alert('Login failed: ' + response.data.message);
+                }
+            })
+            .catch(error => {
+                console.error('There was an error!', error);
+            });
+    });
 });

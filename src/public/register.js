@@ -1,20 +1,31 @@
-document.getElementById('registerForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
+document.addEventListener('DOMContentLoaded', function() {
+    const registerForm = document.getElementById('registerForm');
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+    registerForm.addEventListener('submit', function(event) {
+        event.preventDefault();
 
-    try {
-        const response = await axios.post('/api/users', { name, email, password });
-        if (response.status === 201) {
-            alert('Usuário cadastrado com sucesso!');
-            window.location.href = '/login.html';
-        } else {
-            alert('Erro ao cadastrar usuário. Tente novamente.');
+        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
+        const birthdate = document.getElementById('birthdate').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        if (password !== confirmPassword) {
+            alert('Passwords do not match!');
+            return;
         }
-    } catch (error) {
-        console.error('Erro ao cadastrar usuário:', error);
-        alert('Erro ao cadastrar usuário. Tente novamente.');
-    }
+
+        axios.post('/register', { username, email, birthdate, password })
+            .then(response => {
+                console.log(response.data);
+                if (response.data.success) {
+                    window.location.href = 'login.html';
+                } else {
+                    alert('Registration failed: ' + response.data.message);
+                }
+            })
+            .catch(error => {
+                console.error('There was an error!', error);
+            });
+    });
 });
