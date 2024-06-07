@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão Administrativa</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestão Administrativa</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome de Usuário</th>
+                    <th>Email</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="usersTableBody">
+                <!-- Usuários serão inseridos dinamicamente aqui -->
+            </tbody>
+        </table>
+        <button id="logoutBtn" class="btn">Logout</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const users = [
+                { id: 1, username: 'fulano', email: 'fulano@example.com' },
+                { id: 2, username: 'ciclano', email: 'ciclano@example.com' },
+                { id: 3, username: 'beltrano', email: 'beltrano@example.com' }
+            ];
+
+            const tbody = document.getElementById('usersTableBody');
+            tbody.innerHTML = ''; // Limpa o conteúdo existente da tabela
+
+            users.forEach(user => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${user.username}</td>
+                    <td>${user.email}</td>
+                    <td>
+                        <!-- Botões de ação, como editar e excluir -->
+                        <button class="btn-edit" data-id="${user.id}">Editar</button>
+                        <button class="btn-delete" data-id="${user.id}">Excluir</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+
+                // Adiciona event listener para o botão Editar
+                const editBtn = tr.querySelector('.btn-edit');
+                editBtn.addEventListener('click', async () => {
+                    const userId = user.id;
+                    // Lógica para editar usuário com o ID userId
+                    console.log('Editar usuário com ID:', userId);
+
+                    // Exemplo de requisição Axios para editar usuário
+                    try {
+                        const response = await axios.put(`http://localhost:5000/api/user/${userId}`, { /* Dados de edição */ });
+                        console.log('Resposta da edição:', response.data);
+                    } catch (error) {
+                        console.error('Erro na edição:', error);
+                    }
+                });
+
+                // Adiciona event listener para o botão Excluir
+                const deleteBtn = tr.querySelector('.btn-delete');
+                deleteBtn.addEventListener('click', async () => {
+                    const userId = user.id;
+                    // Lógica para excluir usuário com o ID userId
+                    console.log('Excluir usuário com ID:', userId);
+
+                    // Exemplo de requisição Axios para excluir usuário
+                    try {
+                        const response = await axios.delete(``);
+                        console.log('Resposta da exclusão:', response.data);
+                    } catch (error) {
+                        console.error('Erro na exclusão:', error);
+                    }
+                });
+            });
+
+            // Adiciona event listener para o botão Logout
+            const logoutBtn = document.getElementById('logoutBtn');
+            logoutBtn.addEventListener('click', () => {
+                // Lógica para realizar logout
+                // Por exemplo, você pode redirecionar para a página de login
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html>
