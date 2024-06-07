@@ -158,6 +158,19 @@ body {
     transform: scale(1.05);
 }
 
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    background-color: var(--blue);
+    padding: 10px;
+}
+
+.footer p {
+    font-size: 14px;
+    color: var(--white);
+}
+
+
 /* Media Queries for Responsive Design */
 @media (max-width: 1080px) {
     .navigation {
