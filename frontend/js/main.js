@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const password = document.getElementById('password').value;
 
             try {
-                const response = await axios.post('http://localhost:5000/api/register', { username, email, password });
+                const response = await axios.post('mongodb+srv://mateusdb:dbmateus99@cluster0.1mwlztn.mongodb.net/', { username, email, password });
                 alert(response.data.message);
                 window.location.href = 'login.html'; // Redirecionar para a página de login após cadastro
             } catch (error) {
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const password = document.getElementById('password').value;
 
             try {
-                const response = await axios.post('http://localhost:5000/api/login', { email, password });
+                const response = await axios.post('mongodb+srv://mateusdb:dbmateus99@cluster0.1mwlztn.mongodb.net/', { email, password });
                 localStorage.setItem('token', response.data.token); // Armazenar o token JWT no localStorage
                 window.location.href = 'admin.html'; // Redirecionar para a página de administração após login
             } catch (error) {
@@ -56,7 +56,7 @@ async function loadUsers() {
     }
 
     try {
-        const response = await axios.get('http://localhost:5000/api/users', {
+        const response = await axios.get('mongodb+srv://mateusdb:dbmateus99@cluster0.1mwlztn.mongodb.net/', {
             headers: { Authorization: `Bearer ${token}` }
         });
 
@@ -94,7 +94,7 @@ async function editUser(userId) {
     if (username && email) {
         try {
             const token = localStorage.getItem('token');
-            await axios.put(`http://localhost:5000/api/user/${userId}`, { username, email }, {
+            await axios.put(`mongodb+srv://mateusdb:dbmateus99@cluster0.1mwlztn.mongodb.net/`, { username, email }, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             alert('Usuário atualizado com sucesso');
@@ -110,7 +110,7 @@ async function deleteUser(userId) {
     if (confirm('Tem certeza que deseja excluir este usuário?')) {
         try {
             const token = localStorage.getItem('token');
-            await axios.delete(`http://localhost:5000/api/user/${userId}`, {
+            await axios.delete(`mongodb+srv://mateusdb:dbmateus99@cluster0.1mwlztn.mongodb.net/`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             alert('Usuário excluído com sucesso');
